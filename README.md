@@ -12,8 +12,8 @@
 
 
 
-<img src="https://raw.githubusercontent.com/dayerong/wetools/main/help.jpg" width="600" alt="help"/>
-<img src="https://raw.githubusercontent.com/dayerong/wetools/main/login-1.jpg" width="600" alt="help"/>
-<img src="https://raw.githubusercontent.com/dayerong/wetools/main/login-2.jpg" width="600" alt="help"/>
-<img src="https://raw.githubusercontent.com/dayerong/wetools/main/login-3.jpg" width="600" alt="help"/>
-<img src="https://raw.githubusercontent.com/dayerong/wetools/main/webhook.jpg" width="600" alt="help"/>
+<img src="https://raw.githubusercontent.com/dayerong/wetools/main/help.jpg" width="500" alt="help"/>
+<img src="https://raw.githubusercontent.com/dayerong/wetools/main/login-1.jpg" width="500" alt="help"/>
+<img src="https://raw.githubusercontent.com/dayerong/wetools/main/login-2.jpg" width="500" alt="help"/>
+<img src="https://raw.githubusercontent.com/dayerong/wetools/main/login-3.jpg" width="500" alt="help"/>
+<img src="https://raw.githubusercontent.com/dayerong/wetools/main/webhook.jpg" width="500" alt="help"/>
