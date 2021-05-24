@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{#
+{% block title %}
+    {% if msg == "users" %}
+        重置AD用户密码
+    {% elif msg == "extmail" %}
+        重置企业邮箱密码
+    {% elif msg == "disable" %}
+        关闭离职人员账号
+    {% endif %}
+{% endblock %}
+#}
+
+{% block content %}
+    {% if msg == "users" %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <form class="form-horizontal" method="post" action="/users/ad">
+                        <!-- 表单区域-->
+                        <fieldset>
+                            <legend>重置AD用户密码</legend>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="mid">账号</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="name"
+                                           placeholder="请输入工号" value="{{ name }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 col-md-offset-2">
+                                    <input class="btn btn-primary" type="submit" value="提交"/>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% elif msg == "extmail" %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <form class="form-horizontal" method="post" action="/users/exmail">
+                        <!-- 表单区域-->
+                        <fieldset>
+                            <legend>重置企业邮箱密码</legend>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="mid">账号</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="email"
+                                           placeholder="请输入邮箱账号" value="{{ email }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 col-md-offset-2">
+                                    <input class="btn btn-primary" type="submit" value="提交"/>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% elif msg == "disable" %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <form class="form-horizontal" method="post" action="/users/disable">
+                        <!-- 表单区域-->
+                        <fieldset>
+                            <legend>关闭离职人员账号</legend>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="mid">账号</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="email"
+                                           placeholder="请输入邮箱账号" value="{{ email }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 col-md-offset-2">
+                                    <input class="btn btn-primary" type="submit" value="提交"/>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+

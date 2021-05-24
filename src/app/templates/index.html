@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <form class="form-horizontal" method="post" action="/auth">
+                    <!-- 表单区域-->
+                    <fieldset>
+                        <legend>首页</legend>
+                        <div class="row">
+                            <label class="col-md-2 text-left" for="mid"><a href="/users/ad">重置AD用户密码</a></label>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-2 text-left" for="mid"><a href="/users/exmail">重置企业邮箱密码</a></label>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-2 text-left" for="mid"><a href="/users/disable">关闭离职人员账号</a></label>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-2 text-left" for="mid"><a href="/databases/bmp">备份业中BMP数据库表</a></label>
+                        </div>
+                    </fieldset>
+                </form>
+                <h6 style="text-align:right" class="text-success">用户<b>{{ username }}</b>已登入。</h6>
+            </div>
+        </div>
+        <div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{#
+{% block title %}
+    {% if msg == "users" %}
+        重置AD用户密码
+    {% elif msg == "extmail" %}
+        重置企业邮箱密码
+    {% elif msg == "disable" %}
+        关闭离职人员账号
+    {% endif %}
+{% endblock %}
+#}
+
+{% block content %}
+    {% if msg == "users" %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <form class="form-horizontal">
+                        <!-- 表单区域-->
+                        <fieldset>
+                            <legend>重置AD用户密码</legend>
+                            <h2 class="text-success">成功</h2>
+                            <p>{{ name }}的密码已重置为<b>Cuanon@2021</b>，请提醒立即修改初始密码！</p>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% elif msg == "extmail" %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <form class="form-horizontal">
+                        <!-- 表单区域-->
+                        <fieldset>
+                            <legend>重置企业邮箱密码</legend>
+                            <h2 class="text-success">成功</h2>
+                            <p>{{ email }}的密码已重置为<b>Asia2021</b>，请提醒立即修改初始密码！</p>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% elif msg == "disable" %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <form class="form-horizontal">
+                        <!-- 表单区域-->
+                        <fieldset>
+                            <legend>关闭离职人员账号</legend>
+                            <h2 class="text-success">成功</h2>
+                            <p>邮箱<b>{{ email }}</b>，域账号<b>{{ account }}</b>已关闭！</p>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% elif msg == "bmp" %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <form class="form-horizontal">
+                        <!-- 表单区域-->
+                        <fieldset>
+                            <legend>备份业中BMP数据库表</legend>
+                            <h2 class="text-success">成功</h2>
+                            <p>备份文件<b> {{ filename }} </b>已生成！</p>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+

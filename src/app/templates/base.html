@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/bootstrap.min.css') }}">
+    <!--suppress JSUnresolvedLibraryURL -->
+    <script src="{{ url_for('static', path='/js/jquery.min.js') }}"></script>
+    <!--suppress JSUnresolvedLibraryURL -->
+    <script src="{{ url_for('static', path='/js/bootstrap.min.js') }}"></script>
+    <meta name="viewport" content="width=device-width,initial-scal=1">
+    <script>
+        {% block script %}{% endblock %}
+    </script>
+    <style>
+        {% block style %}{% endblock %}
+    </style>
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+</head>
+<body>
+{% block nav %} {% endblock %}
+{% block content %} {% endblock %}
+{% block footer %} {% endblock %}
+{% block extJS %} {% endblock %}
+</body>
+</html>

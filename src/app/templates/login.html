@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <form class="form-horizontal" method="post" action="/auth">
+                    <!-- 表单区域-->
+                    <fieldset>
+                        <legend>登录</legend>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="mid">账号</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="username"
+                                       placeholder="输入工号" value="{{ username }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="mid">密码</label>
+                            <div class="col-md-4">
+                                <input type="password" class="form-control" name="password"
+                                       placeholder="输入密码" value="{{ password }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="mid">Google Code</label>
+                            <div class="col-md-4">
+                                <input type="password" class="form-control" name="code"
+                                       placeholder="输入谷歌验证码" value="{{ code }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-md-offset-2">
+                                <input class="btn btn-primary" type="submit" value="登录"/>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div>
+
+
+{% endblock %}
