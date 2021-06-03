@@ -18,21 +18,15 @@ router = APIRouter()
 ACCESS_TOKEN_EXPIRE_MINUTES = token_config['ACCESS_TOKEN_EXPIRE_MINUTES']
 
 
-@router.post("/auth", response_model=Token)
+@router.post("/auth", response_class=RedirectResponse)
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(),
-                                 code: str = Form(...)):
+                                 code: str = Form(...)) -> RedirectResponse:
     user = authenticate_ad_user(form_data.username, form_data.password)
     authenticate_google_code(code)
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(data={"sub": user}, expires_delta=access_token_expires).decode("utf-8")
-    response = RedirectResponse("/auth/login/" + access_token, status_code=302)
-    return response
-
-
-@router.get("/auth/login/{access_token}", response_class=RedirectResponse)
-def cookie_set(access_token: str) -> RedirectResponse:
-    response = RedirectResponse(url="/index")
-    response.set_cookie(key="Authorization", value=f"Bearer {access_token}", httponly=True, path='/')
+    response = RedirectResponse(url="/index", status_code=302)
+    response.set_cookie(key="Authorization", value=access_token, httponly=True, path='/', max_age=3600)
     return response
 
 
@@ -54,7 +48,8 @@ def login(request: Request):
         if userid in users:
             access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
             access_token = create_access_token(data={"sub": userid}, expires_delta=access_token_expires).decode("utf-8")
-            response = RedirectResponse("/auth/login/" + access_token, status_code=302)
+            response = RedirectResponse(url="/index", status_code=302)
+            response.set_cookie(key="Authorization", value=access_token, httponly=True, path='/', max_age=3600)
             return response
         else:
             return templates.TemplateResponse("login.html", {"request": request})
